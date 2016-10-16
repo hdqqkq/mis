@@ -110,6 +110,7 @@ CREATE TABLE `检修项目表` (
   
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+
 INSERT INTO `检修项目表` VALUES ('液位仪', '月检', '检查接线紧固情况和电缆磨损情况');
 
 INSERT INTO `检修项目表` VALUES ('液位仪', '月检', '检查液位仪传感器周围漏液和磨损情况');
@@ -160,3 +161,6 @@ INSERT INTO `设备信息表` VALUES ('123456', '液位仪', '2016-08-10');
 ![](/查询图2.png)
 ![](/查询图3.png)
 
+ER图截图：
+
+![](/ER截图.PNG)
