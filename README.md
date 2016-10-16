@@ -2,10 +2,14 @@
 管理信息系统作业
 
 数据库建立
+
 DROP TABLE IF EXISTS `保养信息表`;
+
 CREATE TABLE `保养信息表` (
-  `保养ID` int(20) NOT NULL,
-  `外保养类别` varchar(50) NOT NULL,
+
+`保养ID` int(20) NOT NULL,
+
+`外保养类别` varchar(50) NOT NULL,
   `保养人` varchar(255) NOT NULL,
   `班组` varchar(255) NOT NULL,
   PRIMARY KEY (`保养ID`),
@@ -84,7 +88,9 @@ CREATE TABLE `设备信息表` (
   `最新一次维修时间` varchar(50) NOT NULL,
   PRIMARY KEY (`设备ID`),
   KEY `设备类型` (`外设备类别`)
+  
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 INSERT INTO `设备信息表` VALUES ('123456', '液位仪', '2016-08-10');
+
 设备保养情况查询截图：
