@@ -111,6 +111,7 @@ CREATE TABLE `检修项目表` (
 
 INSERT INTO `检修项目表` VALUES ('液位仪', '月检', '检查接线紧固情况和电缆磨损情况');
 
+
 INSERT INTO `检修项目表` VALUES ('液位仪', '月检', '检查液位仪传感器周围漏液和磨损情况');
 INSERT INTO `检修项目表` VALUES ('液位仪', '月检', '校对液位仪准确度');
 
@@ -161,3 +162,5 @@ INSERT INTO `设备信息表` VALUES ('123456', '液位仪', '2016-08-10');
 ER图截图：
 
 ![](/ER截图.png)
+
+axure原型设计发布链接：http://9f1w0d.axshare.com
