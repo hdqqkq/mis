@@ -36,7 +36,6 @@ CREATE TABLE `保养记录表` (
   
   `保养时间` date NOT NULL,
 
-
   `说明` varchar(255) DEFAULT NULL,
   
   `外消耗ID` int(20) DEFAULT NULL,
@@ -102,8 +101,7 @@ CREATE TABLE `检修项目表` (
   
   KEY `保养类别` (`保养类别`),
   
-  KEY `设备类别` (`设备类别`),
-  
+  KEY `设备类别` (`设备类别`),  
   CONSTRAINT `保养类别` FOREIGN KEY (`保养类别`) REFERENCES `保养信息` (`外保养类别`),
   
   CONSTRAINT `设备类别` FOREIGN KEY (`设备类别`) REFERENCES `设备信息` (`外设备类别`)
@@ -114,7 +112,6 @@ CREATE TABLE `检修项目表` (
 INSERT INTO `检修项目表` VALUES ('液位仪', '月检', '检查接线紧固情况和电缆磨损情况');
 
 INSERT INTO `检修项目表` VALUES ('液位仪', '月检', '检查液位仪传感器周围漏液和磨损情况');
-
 INSERT INTO `检修项目表` VALUES ('液位仪', '月检', '校对液位仪准确度');
 
 DROP TABLE IF EXISTS `消耗记录表`;
@@ -163,4 +160,4 @@ INSERT INTO `设备信息表` VALUES ('123456', '液位仪', '2016-08-10');
 
 ER图截图：
 
-![](/ER截图.PNG)
+![](/ER截图.png)
