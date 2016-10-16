@@ -1,3 +1,4 @@
+
 # mis
 管理信息系统作业
 
@@ -24,31 +25,53 @@ KEY `保养类别` (`外保养类别`)
 INSERT INTO `保养信息表` VALUES ('1', '月检', '李四', '1组');
 
 DROP TABLE IF EXISTS `保养记录表`;
+
 CREATE TABLE `保养记录表` (
+
   `保养记录ID` int(20) NOT NULL AUTO_INCREMENT,
+  
   `外设备ID` int(20) NOT NULL,
+  
   `外保养ID` int(20) NOT NULL,
+  
   `保养时间` date NOT NULL,
+  
   `说明` varchar(255) DEFAULT NULL,
+  
   `外消耗ID` int(20) DEFAULT NULL,
+  
   PRIMARY KEY (`保养记录ID`),
+  
   KEY `设备ID` (`外设备ID`),
+  
   KEY `保养ID` (`外保养ID`),
+  
   KEY `消耗ID` (`外消耗ID`),
+  
   CONSTRAINT `保养ID` FOREIGN KEY (`外保养ID`) REFERENCES `保养信息` (`保养ID`),
+  
   CONSTRAINT `消耗ID` FOREIGN KEY (`外消耗ID`) REFERENCES `消耗记录` (`消耗ID`),
+  
   CONSTRAINT `设备ID` FOREIGN KEY (`外设备ID`) REFERENCES `设备信息` (`设备ID`)
+  
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 INSERT INTO `保养记录表` VALUES ('1', '123456', '1', '2016-09-14', null, '1');
 
 DROP TABLE IF EXISTS `检修情况表`;
+
 CREATE TABLE `检修情况表` (
+
   `ID` int(20) NOT NULL AUTO_INCREMENT,
+  
   `保养内容` varchar(255) NOT NULL,
+  
   `完成状况` varchar(255) NOT NULL,
+  
   `备注` varchar(255) DEFAULT NULL,
+  
   `检修设备ID` int(20) NOT NULL,
+  
   PRIMARY KEY (`ID`),
   KEY `检修设备ID` (`检修设备ID`),
   CONSTRAINT `检修设备ID` FOREIGN KEY (`检修设备ID`) REFERENCES `设备信息` (`设备ID`)
