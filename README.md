@@ -72,7 +72,7 @@ CREATE TABLE `检修情况表` (
   `备注` varchar(255) DEFAULT NULL,
   
   `检修设备ID` int(20) NOT NULL,
-  
+1  
   PRIMARY KEY (`ID`),
   
   KEY `检修设备ID` (`检修设备ID`),
@@ -152,4 +152,7 @@ CREATE TABLE `设备信息表` (
 
 INSERT INTO `设备信息表` VALUES ('123456', '液位仪', '2016-08-10');
 
-设备保养情况查询截图：
+设备保养情况查询截图：![](/查询图1.png)
+![](/查询图2.png)
+![](/查询图3.png)
+
