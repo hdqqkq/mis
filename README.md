@@ -12,14 +12,8 @@ CREATE TABLE `保养信息表` (
   KEY `保养类别` (`外保养类别`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- ----------------------------
--- Records of 保养信息表
--- ----------------------------
 INSERT INTO `保养信息表` VALUES ('1', '月检', '李四', '1组');
 
--- ----------------------------
--- Table structure for `保养记录表`
--- ----------------------------
 DROP TABLE IF EXISTS `保养记录表`;
 CREATE TABLE `保养记录表` (
   `保养记录ID` int(20) NOT NULL AUTO_INCREMENT,
@@ -37,14 +31,8 @@ CREATE TABLE `保养记录表` (
   CONSTRAINT `设备ID` FOREIGN KEY (`外设备ID`) REFERENCES `设备信息` (`设备ID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
--- ----------------------------
--- Records of 保养记录表
--- ----------------------------
 INSERT INTO `保养记录表` VALUES ('1', '123456', '1', '2016-09-14', null, '1');
 
--- ----------------------------
--- Table structure for `检修情况表`
--- ----------------------------
 DROP TABLE IF EXISTS `检修情况表`;
 CREATE TABLE `检修情况表` (
   `ID` int(20) NOT NULL AUTO_INCREMENT,
@@ -57,16 +45,11 @@ CREATE TABLE `检修情况表` (
   CONSTRAINT `检修设备ID` FOREIGN KEY (`检修设备ID`) REFERENCES `设备信息` (`设备ID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
--- ----------------------------
--- Records of 检修情况表
--- ----------------------------
+
 INSERT INTO `检修情况表` VALUES ('1', '检查接线紧固情况和电缆磨损情况', '完成', null, '123456');
 INSERT INTO `检修情况表` VALUES ('2', '检查液位仪传感器周围漏液和磨损情况', '完成', '更换传感器', '123456');
 INSERT INTO `检修情况表` VALUES ('3', '校对液位仪准确度', '完成', null, '123456');
 
--- ----------------------------
--- Table structure for `检修项目表`
--- ----------------------------
 DROP TABLE IF EXISTS `检修项目表`;
 CREATE TABLE `检修项目表` (
   `设备类别` varchar(50) NOT NULL,
@@ -78,16 +61,10 @@ CREATE TABLE `检修项目表` (
   CONSTRAINT `设备类别` FOREIGN KEY (`设备类别`) REFERENCES `设备信息` (`外设备类别`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- ----------------------------
--- Records of 检修项目表
--- ----------------------------
 INSERT INTO `检修项目表` VALUES ('液位仪', '月检', '检查接线紧固情况和电缆磨损情况');
 INSERT INTO `检修项目表` VALUES ('液位仪', '月检', '检查液位仪传感器周围漏液和磨损情况');
 INSERT INTO `检修项目表` VALUES ('液位仪', '月检', '校对液位仪准确度');
 
--- ----------------------------
--- Table structure for `消耗记录表`
--- ----------------------------
 DROP TABLE IF EXISTS `消耗记录表`;
 CREATE TABLE `消耗记录表` (
   `消耗ID` int(20) NOT NULL,
@@ -98,14 +75,8 @@ CREATE TABLE `消耗记录表` (
   KEY `消耗ID` (`消耗ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- ----------------------------
--- Records of 消耗记录表
--- ----------------------------
 INSERT INTO `消耗记录表` VALUES ('1', '更换传感器', '传感器', '1', '9');
 
--- ----------------------------
--- Table structure for `设备信息表`
--- ----------------------------
 DROP TABLE IF EXISTS `设备信息表`;
 CREATE TABLE `设备信息表` (
   `设备ID` int(20) NOT NULL,
@@ -115,8 +86,5 @@ CREATE TABLE `设备信息表` (
   KEY `设备类型` (`外设备类别`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- ----------------------------
--- Records of 设备信息表
--- ----------------------------
 INSERT INTO `设备信息表` VALUES ('123456', '液位仪', '2016-08-10');
 设备保养情况查询截图：
