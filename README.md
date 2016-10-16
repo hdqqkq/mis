@@ -10,10 +10,15 @@ CREATE TABLE `保养信息表` (
 `保养ID` int(20) NOT NULL,
 
 `外保养类别` varchar(50) NOT NULL,
-  `保养人` varchar(255) NOT NULL,
-  `班组` varchar(255) NOT NULL,
-  PRIMARY KEY (`保养ID`),
-  KEY `保养类别` (`外保养类别`)
+
+`保养人` varchar(255) NOT NULL,
+
+`班组` varchar(255) NOT NULL,
+
+PRIMARY KEY (`保养ID`),
+
+KEY `保养类别` (`外保养类别`)
+
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 INSERT INTO `保养信息表` VALUES ('1', '月检', '李四', '1组');
